@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import UserService from '../Services/UserService';
 import {  Link} from 'react-router-dom';
+import { Container } from '@mui/system';
+import { Paper } from '@mui/material';
 
 class ListUserComponent extends Component {
 
@@ -11,7 +13,7 @@ class ListUserComponent extends Component {
         }
 
         this.handleClick = this.handleClick.bind(this);
-
+        
 
     }
     componentDidMount() {
@@ -27,16 +29,18 @@ class ListUserComponent extends Component {
         this.props.history.push("/postuser");
         console.log(this.props);
     }
-
+ 
 
     render() {
         return (
+            <Container>
+                 <Paper  elevation={12}  style={{   padding:'50px 20px',width:1000,morgin:"20px",        border: "1px solid black"  }}>
             <div>
                 <h2 className="text-center">User List</h2>
 
 
                 <div className="row">
-                        <Link to={'/insert'} className="nav-link">Insert</Link>
+                        <Link to={'/Create'} className="nav-link">Add</Link>
                 </div>
                
 
@@ -69,6 +73,8 @@ class ListUserComponent extends Component {
 
 
             </div>
+            </Paper>
+            </Container>
         );
     }
 }
