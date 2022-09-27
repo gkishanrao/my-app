@@ -27,7 +27,7 @@ const {id} = useParams();
      console.log("ResultView=",result.data);
 }
 
-
+  
 
     
     return (
